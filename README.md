@@ -9,7 +9,7 @@
 branch 이름 : 이니셜
 
 예)
-W02_teamB8/2503/2503_kjh
+W02_teamB8/2503/2503_kjh.py
 
 `git push origin kjh`
 
