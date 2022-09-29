@@ -1,6 +1,6 @@
 # W02_teamB7
 ---
-[문제 모음 링크](https://docs.google.com/spreadsheets/d/1H6jOEe-A-zyMi8-0dkuJ9KzRNW77yBpWDwt6JdGEnYo/edit#gid=1701326314)
+[문제 모음 링크](https://docs.google.com/spreadsheets/d/1f95S_3eeqTe46Y3Q_hPboQu9enApkKme7QCFnTAE8ME/edit#gid=1701326314)
 
 폴더명 : 문제번호
 <br>
