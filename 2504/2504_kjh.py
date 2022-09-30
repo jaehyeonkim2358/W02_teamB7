@@ -1,3 +1,5 @@
+# boj 2504 괄호의 값
+
 import sys
 
 ps = sys.stdin.readline().rstrip()
