@@ -3,7 +3,7 @@ import sys
 sys.stdin = open("10828/input.txt","r")
 
 n = int(input())
-stk = deque([],maxlen=10000)
+stk = deque(maxlen=10000)
 for _ in range(n):
     cmd = sys.stdin.readline().split()
     
