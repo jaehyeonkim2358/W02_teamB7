@@ -4,6 +4,10 @@
 # 하얀색: 0
 # 파란색: 1
 import sys
+<<<<<<< HEAD
+=======
+sys.stdin = open('choidabom/BOJ/input.txt', 'r')
+>>>>>>> main
 N = int(sys.stdin.readline())
 
 confetti = []
