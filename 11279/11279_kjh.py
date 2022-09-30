@@ -18,8 +18,8 @@ def add(num):
             max_heap[cur], max_heap[cur//2] = max_heap[cur//2], max_heap[cur]
             cur //= 2
         else:
-            break
-    
+            break    
+
 
 def pop():
     global max_heap
