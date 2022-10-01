@@ -1,10 +1,6 @@
 import sys
-N = int(sys.stdin.readline())
+K = int(sys.stdin.readline())
+while K > 0:
+    money = sys.stdin.readline().strip()
+    K -= 1
 
-num_list = []
-for i in range(N):
-    input = list(map(int, sys.stdin.readline().split()))
-    print(input)
-    num_list.append(input)
-
-print(num_list)
