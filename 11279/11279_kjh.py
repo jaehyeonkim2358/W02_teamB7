@@ -2,8 +2,7 @@ import sys
 
 n = int(sys.stdin.readline().rstrip())
 
-max_heap = [None] * (4 * n)
-max_heap[0] = 999999999999
+max_heap = [None] * (n+2)
 last_index = 0
 
 def add(num):
@@ -14,7 +13,7 @@ def add(num):
     max_heap[last_index] = num
     cur = last_index
     while cur != 0:
-        if max_heap[cur//2] < max_heap[cur]:
+        if cur//2 != 0 and max_heap[cur//2] < max_heap[cur]:
             max_heap[cur], max_heap[cur//2] = max_heap[cur//2], max_heap[cur]
             cur //= 2
         else:
@@ -27,7 +26,7 @@ def pop():
     if last_index == 0:
         return 0
     else:
-        v = max_heap[1]
+        top = max_heap[1]
         cur = 1
         max_heap[cur] = max_heap[last_index]
         max_heap[last_index] = None
@@ -35,26 +34,26 @@ def pop():
         while cur <= last_index:
             left = cur * 2
             right = cur * 2 + 1
-            next = _get(cur, left, right)
-            if max_heap[next] > max_heap[cur]:
-                max_heap[next], max_heap[cur] = max_heap[cur], max_heap[next]
-                cur = next
+            next_idx = get_next(cur, left, right)
+            if max_heap[next_idx] > max_heap[cur]:
+                max_heap[next_idx], max_heap[cur] = max_heap[cur], max_heap[next_idx]
+                cur = next_idx
             else:
                 break
-        return v
+        return top
 
 
-def _get(cur, index1, index2):
+def get_next(cur, left, right):
     global last_index
     global max_heap
 
-    if index2 <= last_index:
-        return index1 if max_heap[index1] > max_heap[index2] else index2
-    elif index1 <= last_index:
-        return index1
+    if right <= last_index:
+        return left if max_heap[left] > max_heap[right] else right
+    elif left <= last_index:
+        return left
     else:
         return cur
-    
+
 
 while n > 0:
     k = int(sys.stdin.readline().rstrip())
