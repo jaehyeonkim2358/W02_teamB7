@@ -17,6 +17,8 @@ def solution(sol):
             s += 1
         else:
             e -= 1
+        if min_sum == 0:
+            break
     return min_sol
 
 answer = solution(sol)
