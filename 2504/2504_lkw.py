@@ -51,29 +51,3 @@ def check(line):
     return cal_stk[0]
 
 print(check(input()))
-
-
-# 백준 풀이
-#
-# def f(p):
-#     if len(p) == 0 : return 1
-#     dic = {'(':')', '[':']'}
-#     ans, sub, stk = 0, '', []
-    
-#     for i in p:
-#         sub += i
-#         if len(stk) > 0 and dic.get(stk[-1], '') == i:
-#             stk.pop()
-#         else :
-#             stk.append(i)
-
-#         if len(stk) == 0:
-#             ans = ans + f(sub[1:-1]) * (2 if sub[0] == '(' else 3)    ### 재귀 부분.
-#             sub = ''
-
-#     if len(stk) > 0 :
-#         return 0
-
-#     return ans
-
-# print(f(input()))
