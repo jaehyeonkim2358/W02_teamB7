@@ -1,5 +1,3 @@
-# boj 2504 괄호의 값
-
 import sys
 
 ps = sys.stdin.readline().rstrip()
@@ -7,7 +5,7 @@ ps = sys.stdin.readline().rstrip()
 def check(target):
     stack = []                          # 괄호 문자를 입력대로 하나씩 push 또는 pop
     depth = 0                           # 괄호의 깊이
-    depth_sum = [0] * (len(target)+1)   # 괄호의 각 깊이에 대한 계산값을 저장, 갱신할 리스트
+    depth_sum = [0] * (len(target))   # 괄호의 각 깊이에 대한 계산값을 저장, 갱신할 리스트
 
     for p in target:
         # '여는 괄호'가 시작되면 push(), 괄호 깊이 1 증가
