@@ -10,7 +10,7 @@ def check(target):
     flag = 1                            # 올바른 괄호 문자열인지 여부
 
     depth = 0                           # 괄호의 깊이
-    depth_sum = [0] * (len(target)+1)   # 괄호의 각 깊이에 대한 계산값을 저장, 갱신할 리스트
+    depth_sum = [0] * (len(target))   # 괄호의 각 깊이에 대한 계산값을 저장, 갱신할 리스트
 
     for p in target:
 
