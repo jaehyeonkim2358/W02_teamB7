@@ -53,27 +53,58 @@ def check(line):
 print(check(input()))
 
 # 백준 정답
-# def f(p):
-#     if len(p) == 0 :return 1
+def f(p):
+    if len(p) == 0 :return 1
 
-#     dic = {'(':')', '[':']'}
-#     ans, sub, stk = 0, '', []
+    dic = {'(':')', '[':']'}
+    ans, sub, stk = 0, '', []
 
-#     for i in p:
-#         sub += i
+    for i in p:
+        sub += i
 
-#         if len(stk) > 0 and dic.get(stk[-1], '') == i:
-#             stk.pop()
-#         else :
-#             stk.append(i)
+        if len(stk) > 0 and dic.get(stk[-1], '') == i:
+            stk.pop()
+        else :
+            stk.append(i)
 
-#         if len(stk) == 0:
-#             ans = ans + f(sub[1:-1]) * (2 if sub[0] == '(' else 3)
-#             sub= ''
+        if len(stk) == 0:
+            ans = ans + f(sub[1:-1]) * (2 if sub[0] == '(' else 3)
+            sub= ''
 
-#     if len(stk) > 0 :
-#         return 0
+    if len(stk) > 0 :
+        return 0
 
-#     return ans
+    return ans
 
-# print(f(input()))
+
+# 원희형 정답
+def calculate(string):
+    ans = 0
+    pairs = {'(':')', '[':']'}
+    values = {'(':2, ')':2, '[':3, ']':3}
+    temp = 1
+    for idx in range(len(string)):
+        if string[idx] in '([':
+            stack.push(string[idx])
+            temp *= values[string[idx]]
+        elif string[idx] == ')':
+            if stack.is_empty() or stack.peek() == '[':
+                ans = 0
+                break
+            if string[idx-1] == '(':
+                ans += temp
+            stack.pop()
+            temp //= values[string[idx]]
+        else:
+            if stack.is_empty() or stack.peek() == '(':
+                ans = 0
+                break
+            if string[idx-1] == '[':
+                ans += temp
+            stack.pop()
+            temp //= values[string[idx]]
+
+    if stack.is_empty():
+        print(ans)
+    else:
+        print(0)
