@@ -39,7 +39,7 @@ while n > 0:
     # 두 힙의 길이가 같다면
     if len(min_heap) == len(max_heap):
         # 중간값은 두 힙의 root값 중 작은 값
-        mid = min_heap[0] if min_heap[0] < -max_heap[0] else -max_heap[0]
+        mid = -max_heap[0]
         sys.stdout.write(f'{mid}\n')
     # 두 힙의 길이가 다르다면
     else:
