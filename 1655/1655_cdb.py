@@ -10,7 +10,9 @@ for i in range(n):
     # if len(max_heap) == len(min_heap):
     #     heapq.heappush(max_heap, -num)
 
-    # 방법2: i가 짝수일 때 왼쪽에 위치한 최대 힙에 push 해줌.
+    # 방법2: 입력값을 최대 힙과 최소 힙에 번갈아 가면서 저장하면, 항상 최대 힙의 peek 값이 중간값이 된다.
+    # 단, 저장할 때마다 최대 힙의 peek값과 최소 힙의 peek 값을 비교하고, 최소 힙의 peek값이 더 크다면 그 둘을 바꿔줘야한다.
+    # (항상 최대 힙의 peek값이 최소 힙의 peek 값보다 작도록 유지하며 진행)
     if i % 2 == 0:
         heapq.heappush(max_heap, num * -1)
     else:
