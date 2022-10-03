@@ -6,7 +6,6 @@ n = int(sys.stdin.readline().rstrip())
 
 max_heap = []
 min_heap = []
-cnt = 0
 
 while n > 0:
     k = int(sys.stdin.readline().rstrip())
