@@ -1,6 +1,7 @@
 # 2504: 괄호의 값
 
 import sys
+
 sys.stdin = open('input.txt', 'r')
 bracket = sys.stdin.readline().rstrip()
 

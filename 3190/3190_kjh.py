@@ -25,16 +25,22 @@ s_dir = [0, 1]
 time = 0
 while True:
     time += 1
+    
     next_loc = [s_loc[-1][0]+s_dir[0], s_loc[-1][1]+s_dir[1]]
+
     if game_over(next_loc, n, s_loc):
         break
+
     flag = True
     if dummy_map[s_loc[-1][0]][s_loc[-1][1]] == 1:
         dummy_map[s_loc[-1][0]][s_loc[-1][1]] = 0
         flag = False
+
     s_loc.append(next_loc)
+
     if s_loc and flag:
         s_loc.pop(0)
+
     if dir and time == int(dir[0][0]):
         if dir[0][1] == 'D':
             s_dir[0], s_dir[1] = s_dir[1], -s_dir[0]
