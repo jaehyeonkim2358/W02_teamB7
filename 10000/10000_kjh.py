@@ -22,7 +22,7 @@ def solution():
         # stack이 비어있는 경우 저장
         if not stack:
             # 순서대로, 원의 왼쪽 좌표, 오른쪽 좌표, 길이(지름)
-            stack.append([l, r, r-l])
+            stack.append((l, r, r-l))
         # stack이 비어있지 않은 경우
         else:
             # 나를 포함하고 있지 않은 원을 모두 제거
@@ -39,7 +39,7 @@ def solution():
             # 이때 지름에 sub_len을 더해주는 이유는
             # 이전에 있던 '나를 포함하지 않는 원 중 마지막 원'의 지름을 더한 값으로 
             # '나를 포함하는 원'을 양분하는지 확인하기 위함임
-            stack.append([l, r, sub_len+r-l])
+            stack.append((l, r, sub_len+r-l))
     
     return count
 
