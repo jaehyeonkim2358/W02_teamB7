@@ -1,5 +1,5 @@
 # 2805: 나무 자르기
-
+# n은 나무의 수, m은 상근이가 집으로 가져가려고 하는 나무의 길이
 n, m = map(int, input().split())
 trees = list(map(int, input().split()))
 start, end = 1, max(trees)
@@ -24,3 +24,9 @@ while start <= end:
 
 print(end)
 
+# 입력
+# 4 7
+# 20 15 10 17
+
+# 출력
+# 15
