@@ -24,12 +24,16 @@ def solution(histogram, s, e):
     r_idx = m
     height = histogram[m]
     mid_width = height
+    # 왼쪽 또는 오른쪽 중 하나가 시작 또는 끝지점에 닿을 때 까지 반복
     while s < l_idx and r_idx < e:
+        # 다음 위치를 이용해서 대소 비교후 큰쪽(사각형 길이가 긴 쪽)으로 확장
         if histogram[l_idx-1] < histogram[r_idx+1]:
             r_idx += 1
+            # 최소 높이를 가로 길이와 곱해서 전체 넓이를 갱신하기 위해 height을 둘 중 작은값으로 갱신
             height = min(height, histogram[r_idx])
         else:
             l_idx -= 1
+            # 최소 높이를 가로 길이와 곱해서 전체 넓이를 갱신하기 위해 height을 둘 중 작은값으로 갱신
             height = min(height, histogram[l_idx])
             
         mid_width = max(mid_width, height * (r_idx-l_idx+1))
