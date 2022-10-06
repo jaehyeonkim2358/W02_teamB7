@@ -6,7 +6,7 @@ n = int(sys.stdin.readline().rstrip())
 roads = []
 for _ in range(n):
     # (70, 40)과 같이 집과 사무실에 대한 좌표가 정렬되어 있지 않기 때문에 정렬 시켜서 입력 받음
-    road = sorted(list(map(int, sys.stdin.readline().split())))
+    road = sorted(tuple(map(int, sys.stdin.readline().split())))
     roads.append(road)
 # roads를 정렬하는데,
 # 1. 끝값을 오름차순으로 정렬
